@@ -1,1 +1,36 @@
+var buttonManager = require("buttons");
+var http = require("http");
 
+var url = "ENDPOINT_URL";
+var apiKey = "cJjfxXLLNtiFpyMjWXIYTC";
+
+buttonManager.on("buttonSingleOrDoubleClickOrHold", function(obj) {
+  var button = buttonManager.getButton(obj.bdaddr);
+  var clickType = obj.isSingleClick ? "click" : obj.isDoubleClick ? "double_click" : "hold";
+
+  var payload = {
+    "serial-number": button.serialNumber,
+    "click-type": clickType,
+    "digits": getDigitsFromClick(clickType)
+  };
+
+  http.makeRequest({
+    url: url,
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + apiKey
+    },
+    content: JSON.stringify(payload),
+  }, function(err, res) {
+    console.log("request status: ", err, res);
+  });
+});
+
+console.log("Started");
+
+function getDigitsFromClick(clickType) {
+  //LOGIC FOR SWIPE UP/DOWN/LEFT/RIGHT
+  //LOGIC FOR PAUSE/PLAY
+  //LOGIC FOR ENTER
+}
