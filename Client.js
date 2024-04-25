@@ -2,7 +2,7 @@ const WebSocket = require('ws');
 
 const socket = new WebSocket('ws://localhost:8100');
 
-// basic client code - Pranav
+// basic client code
 socket.on('open', function() {
   console.log('Connected to Server');
   socket.send('Hello from client');
@@ -12,7 +12,7 @@ socket.on('open', function() {
 //   console.log('Received from server: ' + data);
 // });
 
-// moves right or left depending on server input - AJ
+// moves right or left depending on server input
 socket.on('message', function(data) {
     console.log("Server says:" + data);
     if (data == "Right") {

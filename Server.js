@@ -1,7 +1,7 @@
 const WebSocket = require('ws');
 const server = new WebSocket.Server({port: 8100});
 
-// basic server code - Pranav
+// basic server code
 server.on('connection', function(socket) {
   console.log('Client connected');
   socket.on('message', function(message) {
@@ -9,7 +9,7 @@ server.on('connection', function(socket) {
     // socket.send('Echo: ' + message);
   });
   
-  // when the flic is pressed - Pranav
+  // when the flic is pressed
   let android_screen = true;
   setInterval(() => { //swiping screen
     android_screen = !android_screen
