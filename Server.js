@@ -1,7 +1,7 @@
 const WebSocket = require('ws');
 const server = new WebSocket.Server({port: 8100});
 
-// basic server code 
+// basic server code - Pranav
 server.on('connection', function(socket) {
   console.log('Client connected');
   socket.on('message', function(message) {
@@ -9,11 +9,11 @@ server.on('connection', function(socket) {
     // socket.send('Echo: ' + message);
   });
   
-  // when the flic is pressed
+  // when the flic is pressed - Pranav
   let android_screen = true;
   setInterval(() => { //swiping screen
     android_screen = !android_screen
-    let movement = android_screen ? "Right" : "Left";
+    let movement = android_screen ? "Right" : "Left"; 
     socket.send(movement);
     console.log('Client :' + movement);
     android_screen = !android_screen;
