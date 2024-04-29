@@ -8,4 +8,6 @@
  
  However, the adaptive devices team decided not to move forward with this code as it was too complex to implement the required functionalities that our project partner wants. After a much deliberated discussion with the adaptive devices team, the team believed that with the time constraint, and the complexity of the code, we should find another way to meet our partner's requirements. Additionally, without the ability to iteratively test our code and functionality, it didn't seem as a process that we should move forward with. 
 
+Who did what: Pranav wrote the server and the entire client side code, with AJ helping Pranav write a bit of the server code. AJ and Pranav both worked on the temp file code, which was the online IDE code for the Flic Hub which sends data to ThingSpeak. AJ wrote approximately 60% of the code, and Pranav helped with the other 40%. 
+
  Update: Our first product design is complete, with nearly 85% of the functionality that our project partner wanted. To do so, we used the back-end of the Flic application to hardcode the Flic buttons and map them to actions on a keyboard.
